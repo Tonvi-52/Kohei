@@ -50,6 +50,7 @@ img {
   max-width: 1200px;
   /* 全体的な最大幅を調整 */
   width: 90%;
+  /* 左右に余白を持たせる */
   margin: 0 auto;
   padding: 0;
   /* 各セクションでpaddingを調整 */
@@ -72,8 +73,8 @@ header {
 }
 
 header .container {
-  padding: 0;
-  /* ヘッダー内のコンテナのパディングをリセット */
+  padding: 0 20px;
+  /* ヘッダー内のコンテナの左右パディング */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -165,7 +166,7 @@ header nav ul.main-nav li a:hover {
 /* 各セクション共通スタイル */
 h2 {
   font-size: 36px;
-  /* H2のフォントサイズを調整 */
+  /* H2のフォントサイズを調整 (PC版) */
   font-weight: 700;
   text-align: center;
   margin-bottom: 25px;
@@ -229,15 +230,14 @@ hr {
 }
 
 /* ====================================
-   既存のセクションのスタイル (section1, section2, section3, section4)
+   各セクションの共通パディング
    ==================================== */
 .section1,
 .section2,
 .section3,
 .section4 {
-  /* section4も共通でpaddingを持つ */
-  padding: 60px 0;
-  /* 上下のパディングを調整 */
+  padding: 80px 0;
+  /* PC版では上下パディングを多めに取る */
 }
 
 .section1 {
@@ -258,7 +258,9 @@ hr {
   background-color: var(--light-gray);
 }
 
-/* 経歴セクションのスタイル (section1) */
+/* ====================================
+   section1 (経歴) のスタイル
+   ==================================== */
 .section1 .row {
   display: flex;
   justify-content: center;
@@ -323,12 +325,9 @@ td {
 
 
 /* ====================================
-   統一デザインセクションのスタイル (.election-statement クラスを使用)
-   section2とsection3に適用
+   section2 & section3 (統一デザインセクション) のスタイル
    ==================================== */
 .election-statement {
-  padding: 80px 0;
-  /* 上下のパディングを多めに取る */
   text-align: center;
   /* 全体中央揃え */
 }
@@ -378,7 +377,6 @@ td {
   background-color: var(--light-gray);
 }
 
-
 .statement-block .text {
   text-align: left;
   max-width: none;
@@ -427,13 +425,9 @@ td {
 
 
 /* ====================================
-   お問い合わせセクションのスタイル (.contact-section - section4)
+   section4 (お問い合わせ) のスタイル
    ==================================== */
 .contact-section {
-  padding: 80px 0;
-  /* 上下のパディング */
-  background-color: var(--light-gray);
-  /* section2と交互になるように */
   text-align: center;
 }
 
@@ -460,7 +454,6 @@ td {
   margin-bottom: 50px;
 }
 
-/* ここからSNSボタンのかっこいいデザインのための修正 */
 .contact-button {
   display: inline-flex;
   /* アイコンとテキストを横並びに */
@@ -584,12 +577,26 @@ footer {
 
 
 /* ====================================
-   レスポンシブデザイン (全てのセクションに適用)
+   レスポンシブデザイン - メディアクエリ
    ==================================== */
+
+/* タブレット向け (最大幅 992px) */
 @media (max-width: 992px) {
+
+  /* 各セクションのパディング調整 */
+  .section1,
+  .section2,
+  .section3,
+  .section4 {
+    padding: 60px 0;
+    /* 上下のパディングを狭める */
+  }
+
+  /* ヘッダー */
   header .container {
     flex-direction: column;
-    padding: 10px 0;
+    padding: 10px 20px;
+    /* 左右パディングを維持 */
   }
 
   header .logo {
@@ -609,26 +616,39 @@ footer {
   /* 全体的なセクションタイトルとテキストの調整 */
   h2 {
     font-size: 30px;
+    /* タブレット向けH2フォントサイズ */
   }
 
   .text {
     font-size: 15px;
   }
 
-  /* section1 の調整 */
+  /* section1 (経歴) の調整 */
   .section1 .row {
     flex-direction: column;
+    /* 縦並びに変更 */
     gap: 30px;
   }
 
   .section1 .col {
     width: 100%;
+    /* フル幅に */
     max-width: 500px;
+    /* 中央に寄せるための最大幅 */
+    margin: 0 auto;
+    /* 中央寄せ */
   }
 
   .section1 .col img {
     width: 80%;
+    /* 画像を少し小さく */
     margin: 0 auto;
+    /* 中央寄せ */
+  }
+
+  table {
+    margin-top: 30px;
+    /* テーブル上部に余白 */
   }
 
   th,
@@ -641,11 +661,7 @@ footer {
     width: 40%;
   }
 
-  /* 統一デザインセクション (.election-statement - section2, section3) の調整 */
-  .election-statement {
-    padding: 60px 0;
-  }
-
+  /* section2 & section3 (統一デザインセクション) の調整 */
   .statement-intro {
     font-size: 40px;
     letter-spacing: 0.03em;
@@ -660,6 +676,7 @@ footer {
     padding: 30px;
     margin-bottom: 40px;
     max-width: 95%;
+    /* 左右に少し余白 */
   }
 
   .text.emphasized-point {
@@ -673,11 +690,7 @@ footer {
     margin-top: 60px;
   }
 
-  /* お問い合わせセクションの調整 */
-  .contact-section {
-    padding: 60px 0;
-  }
-
+  /* section4 (お問い合わせ) の調整 */
   .contact-intro {
     font-size: 16px;
     margin-bottom: 40px;
@@ -695,6 +708,7 @@ footer {
     max-width: 300px;
     /* 最大幅を設定 */
     margin: 0 auto;
+    /* 中央寄せ */
     padding: 15px 25px;
     /* レスポンシブでパディングを調整 */
     font-size: 16px;
@@ -708,7 +722,24 @@ footer {
   }
 }
 
+/* スマートフォン向け (最大幅 600px) */
 @media (max-width: 600px) {
+
+  /* 各セクションのパディング調整 */
+  .section1,
+  .section2,
+  .section3,
+  .section4 {
+    padding: 40px 0;
+    /* 上下のパディングをさらに狭める */
+  }
+
+  .container {
+    width: 95%;
+    /* 左右の余白をさらに狭める */
+  }
+
+  /* ヘッダー */
   header .logo {
     font-size: 24px;
   }
@@ -721,13 +752,31 @@ footer {
   /* 全体的なセクションタイトルとテキストの調整 */
   h2 {
     font-size: 26px;
+    /* スマートフォン向けH2フォントサイズ */
   }
 
   .text {
     font-size: 14px;
   }
 
-  /* 統一デザインセクション (.election-statement - section2, section3) の調整 */
+  .big {
+    /* メインの大きなテキストも調整 */
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  /* section1 (経歴) の調整 */
+  th,
+  td {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  th {
+    width: 40%;
+  }
+
+  /* section2 & section3 (統一デザインセクション) の調整 */
   .election-statement .statement-intro {
     font-size: 32px;
     line-height: 1.4;
@@ -754,7 +803,7 @@ footer {
     margin-top: 40px;
   }
 
-  /* お問い合わせセクションの調整 */
+  /* section4 (お問い合わせ) の調整 */
   .contact-intro {
     font-size: 15px;
     margin-bottom: 30px;
@@ -771,20 +820,22 @@ footer {
     /* さらにパディングを狭く */
     height: 80px;
     /* さらに高さを狭く */
+    border-radius: 12px;
+    /* スマホ向けに角丸を微調整 */
+  }
+
+  .contact-button::before {
+    border-radius: 12px;
+    /* 擬似要素の角丸も合わせる */
   }
 
   .contact-button i {
     font-size: 26px;
     /* アイコンサイズもさらに調整 */
   }
-
-  th,
-  td {
-    padding: 12px 15px;
-    font-size: 14px;
-  }
 }
 
+/* さらに小さなスマートフォン向け (最大幅 400px) */
 @media (max-width: 400px) {
   header nav ul.main-nav li {
     font-size: 14px;
@@ -794,9 +845,10 @@ footer {
   /* 全体的なセクションタイトルとテキストの調整 */
   h2 {
     font-size: 22px;
+    /* さらに小さなスマートフォン向けH2フォントサイズ */
   }
 
-  /* 統一デザインセクション (.election-statement - section2, section3) の調整 */
+  /* section2 & section3 (統一デザインセクション) の調整 */
   .election-statement .statement-intro {
     font-size: 26px;
   }
@@ -818,7 +870,7 @@ footer {
     padding: 15px 20px;
   }
 
-  /* お問い合わせセクションの調整 */
+  /* section4 (お問い合わせ) の調整 */
   .contact-button {
     font-size: 14px;
     padding: 10px 18px;
