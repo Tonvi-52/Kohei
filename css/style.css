@@ -322,6 +322,11 @@ hr {
     font-size: 18px;
     margin-bottom: 50px;
   }
+
+  .main_visual {
+    margin: 0 0 40px 0;
+    /* 下マージンのみ */
+  }
 }
 
 @media (max-width: 600px) {
@@ -337,6 +342,11 @@ hr {
 
   #call-to-action-survey h2 {
     font-size: 28px;
+  }
+
+  .main_visual {
+    margin: 0 0 20px 0;
+    /* 下マージンのみ */
   }
 }
 
@@ -354,6 +364,11 @@ hr {
   #call-to-action-survey h2 {
     font-size: 24px;
   }
+
+  .main_visual {
+    margin: 0 0 18px 0;
+    /* 下マージンのみ */
+  }
 }
 
 @media (max-width: 375px) {
@@ -369,6 +384,11 @@ hr {
 
   #call-to-action-survey h2 {
     font-size: 20px;
+  }
+
+  .main_visual {
+    margin: 0 0 16px 0;
+    /* 下マージンのみ */
   }
 }
 
