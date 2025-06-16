@@ -11,6 +11,8 @@
   --light-gray: #f8f8f8;
   --border-color: #ddd;
   --white: #fff;
+  --emphasis-dark-blue: #0A3D62;
+  /* アンケートセクション用の強調色 */
 }
 
 /* 基本設定 */
@@ -230,7 +232,7 @@ hr {
 }
 
 /* ====================================
-   各セクションの共通パディング
+   各セクションの共通パディングと背景色 (元に戻しました)
    ==================================== */
 .section1,
 .section2,
@@ -259,7 +261,116 @@ hr {
 }
 
 /* ====================================
-   section1 (経歴) のスタイル
+   UPDATED: アンケートセクションのスタイル (目立たせる)
+   ==================================== */
+#call-to-action-survey {
+  /* IDで直接指定して強調 */
+  padding: 100px 0;
+  /* 上下パディングを増やす */
+  margin: 80px 0;
+  /* 上下に大きなマージンを追加 */
+  background-color: var(--emphasis-dark-blue);
+  /* より濃い青の背景色 */
+  color: var(--white);
+  /* テキスト色を白に */
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* 影を追加 */
+}
+
+#call-to-action-survey h2 {
+  color: var(--white);
+  /* H2の色を白に */
+  margin-bottom: 30px;
+  /* H2の下マージンを調整 */
+}
+
+#call-to-action-survey h2::after {
+  background-color: var(--white);
+  /* H2の下線を白に */
+}
+
+#call-to-action-survey .contact-intro,
+#call-to-action-survey .contact-outro {
+  color: var(--white);
+  /* テキスト色を白に */
+  max-width: 700px;
+  /* テキスト幅を広げる */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#call-to-action-survey .contact-intro {
+  font-size: 20px;
+  /* 少し大きめのフォントサイズ */
+  margin-bottom: 60px;
+  /* 下マージンを増やす */
+}
+
+/* レスポンシブ対応も追加 */
+@media (max-width: 992px) {
+  #call-to-action-survey {
+    padding: 80px 0;
+    margin: 60px 0;
+  }
+
+  #call-to-action-survey .contact-intro {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  #call-to-action-survey {
+    padding: 60px 0;
+    margin: 40px 0;
+  }
+
+  #call-to-action-survey .contact-intro {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  #call-to-action-survey h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  #call-to-action-survey {
+    padding: 40px 0;
+    margin: 30px 0;
+  }
+
+  #call-to-action-survey .contact-intro {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  #call-to-action-survey h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  #call-to-action-survey {
+    padding: 30px 0;
+    margin: 25px 0;
+  }
+
+  #call-to-action-survey .contact-intro {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  #call-to-action-survey h2 {
+    font-size: 20px;
+  }
+}
+
+
+/* ====================================
+   section1 (経歴) のスタイル (元に戻しました)
    ==================================== */
 .section1 .row {
   display: flex;
@@ -325,7 +436,7 @@ td {
 
 
 /* ====================================
-   section2 & section3 (統一デザインセクション) のスタイル
+   section2 & section3 (統一デザインセクション) のスタイル (元に戻しました)
    ==================================== */
 .election-statement {
   text-align: center;
@@ -375,8 +486,10 @@ td {
 
 /* section2のstatement-blockの背景色をlight-grayにする（section2の背景がlight-grayのため） */
 .section2.election-statement .statement-block {
+  /* この指定は、元の section2 の背景色に合わせています */
   background-color: var(--light-gray);
 }
+
 
 .statement-block .text {
   text-align: left;
@@ -426,9 +539,10 @@ td {
 
 
 /* ====================================
-   section4 (お問い合わせ) のスタイル
+   section4 (お問い合わせ) のスタイル & アンケートセクションにも適用
    ==================================== */
 .contact-section {
+  /* contact-sectionに加えて、新しいアンケートセクションにも適用 */
   text-align: center;
 }
 
@@ -437,6 +551,7 @@ td {
 }
 
 .contact-intro {
+  /* Applies to text with this class in contact and survey sections */
   font-size: 18px;
   margin-bottom: 50px;
   color: var(--dark-blue);
@@ -446,6 +561,7 @@ td {
 }
 
 .contact-links {
+  /* Applies to button containers in contact and survey sections */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -456,6 +572,7 @@ td {
 }
 
 .contact-button {
+  /* Applies to all contact buttons */
   display: inline-flex;
   /* アイコンとテキストを横並びに */
   flex-direction: column;
@@ -558,6 +675,7 @@ td {
 }
 
 .contact-outro {
+  /* Applies to text with this class in contact and survey sections */
   font-size: 14px;
   color: #666;
   margin-top: 20px;
@@ -578,7 +696,7 @@ footer {
 
 
 /* ====================================
-   レスポンシブデザイン - メディアクエリ
+   レスポンシブデザイン - メディアクエリ (元に戻しました)
    ==================================== */
 
 /* タブレット向け (最大幅 992px) */
@@ -801,6 +919,10 @@ footer {
     border-top: 4px solid var(--primary-blue);
   }
 
+  .statement-block .text {
+    font-size: 14px;
+  }
+
   .text.emphasized-point {
     font-size: 16px;
   }
@@ -839,7 +961,7 @@ footer {
 
   .contact-button i {
     font-size: 26px;
-    /* アイコンサイズもさらに調整 */
+    /* レスポンシブでアイコンサイズも調整 */
   }
 }
 
@@ -941,8 +1063,8 @@ footer {
   .election-statement .statement-intro {
     font-size: 26px;
     /* さらに小さなスマートフォン向け statement-intro フォントサイズ */
-    line-height: 1.3;
     margin-bottom: 15px;
+    line-height: 1.3;
   }
 
   .election-statement .sub-intro {
