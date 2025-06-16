@@ -164,7 +164,7 @@ header nav ul.main-nav li a:hover {
   width: 100%;
   /* 画像をコンテナの幅に合わせる */
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   /* 画像の縦横比を保ちつつ、コンテナを埋める */
   display: block;
 }
